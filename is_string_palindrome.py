@@ -18,26 +18,28 @@ def get_input():
         else:
             print("invalid input")
 def convert_input_to_list(user_input):
-    array=[]
-    for letter in user_input:
-        array.append(letter)
+    array=[letter for letter in user_input]
     return array
 def convert_input_to_list_backword(user_input):
     array=[]
     x=-1
-    while x>=-len(user_input):
-        array.append(user_input[x])
-        x-=1
+    if len(user_input)%2==0:
+        while x>=-len(user_input)//2:
+            array.append(user_input[x])
+            x-=1
+    else:
+        while x>-len(user_input)//2:
+            array.append(user_input[x])
+            x-=1
     return array
 def is_string_palindrome(array,array_backword):
-    if array==array_backword:
-        return "palindrome"
+    if array[0:(len(array)//2)]==array_backword:
+        return True
     else:
-        return "not palindrome"
+        return False
 def start():
     user_input=get_input()
     array=convert_input_to_list(user_input)
     array_backword=convert_input_to_list_backword(user_input)
-    result=is_string_palindrome(array,array_backword)
-    print(f"string is {result}")
+    print(is_string_palindrome(array,array_backword))
 start()
