@@ -28,7 +28,7 @@ def create_array():
     return array
 def get_output(array):
     array_output=[]
-    for element in array[len(array)//2:len(array)]:
+    for element in array[len(array)//2:]:
         array_output.append(element)
     return array_output
 def start():
