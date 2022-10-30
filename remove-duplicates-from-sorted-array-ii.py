@@ -1,6 +1,3 @@
-from matplotlib.artist import get
-
-
 nums=[0,0,1,1,1,1,2,3,3]
 def get_duplicates():
     counter=0
